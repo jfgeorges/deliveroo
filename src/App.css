@@ -1,33 +1,120 @@
-.App {
-  text-align: center;
+@import "./assets/css/reset.css";
+
+@import url("https://fonts.googleapis.com/css?family=Fjalla+One|IBM+Plex+Sans");
+body {
+  background-color: white;
+}
+.container {
+  margin: auto;
+  max-width: 1120px;
+  height: 100%;
+}
+header {
+  height: 75px;
+  padding-top: 5px;
+  border-bottom: 3px solid #f0f0f0;
+}
+header img {
+  height: 30px;
+  width: 112px;
+  object-fit: cover;
+  padding-top: 18px;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.restaurant {
+  width: 100%;
+  height: 160px;
+  display: flex;
+  margin-bottom: 20px;
+}
+.restaurantNameDesc {
+  width: Calc(100% - 370px);
+}
+.restaurantName {
+  font-family: "Fjalla One", sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  width: 100%;
+  padding-top: 10px;
+  color: #2e3333;
+}
+.restaurantDescription {
+  font-family: "IBM Plex Sans", sans-serif;
+  color: #828585;
+  width: 100%;
+  padding-top: 20px;
+}
+.restaurantPicture {
+  height: 160px;
+  width: 370px;
+  object-fit: cover;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.containerCategories {
+  max-width: 730px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: #f4f5f5;
+}
+.categoryTitle {
+  font-family: "Fjalla One", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: #2e3333;
+  margin-bottom: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.containerMenu {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 60px;
+}
+.cardMenu:hover {
+  /* transform: scale(1.05); */
+}
+.cardMenu {
+  /* transition: all 0.4s ease-in-out; */
+  font-family: "IBM Plex Sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+  width: Calc(50% - 10px);
+  height: 135px;
+  background-color: white;
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+}
+.cardMenu img {
+  width: 205px;
+  height: 305px;
+  object-fit: cover;
+}
+.menuTitle {
+  padding-top: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #2e3333;
+}
+.menuDescription,
+.menuPrice {
+  padding-top: 10px;
+  color: #828585;
+}
+.menuDescription {
+  font-size: 14px;
+}
+.menuPrice {
+  font-size: 16px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button {
+  border: none;
+  height: 40px;
+  width: 220px;
+  margin-right: 20px;
+  padding: 10px;
+  outline: none;
+  font-size: 22px;
+  font-weight: bold;
+  background-color: #f4f4f4;
 }
