@@ -4,7 +4,7 @@ import Menu from "./Menu";
 class Category extends React.Component {
   renderMenu = menus => {
     return menus.map((menu, i) => {
-      return <Menu key={"menu" + i} menu={menu} />;
+      return <Menu key={"menu" + i} menu={menu} addMenu={this.props.addMenu} />;
     });
   };
   render() {

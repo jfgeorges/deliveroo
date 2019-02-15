@@ -6,12 +6,13 @@ body {
 }
 .container {
   margin: auto;
-  max-width: 1120px;
+  max-width: 1160px;
   height: 100%;
 }
 header {
   height: 75px;
   padding-top: 5px;
+  padding-left: 15px;
   border-bottom: 3px solid #f0f0f0;
 }
 header img {
@@ -20,12 +21,15 @@ header img {
   object-fit: cover;
   padding-top: 18px;
 }
-
+/**************/
+/* RESTAURANT */
+/**************/
 .restaurant {
-  width: 100%;
+  width: Calc(100% - 15px);
   height: 160px;
   display: flex;
   margin-bottom: 20px;
+  padding-left: 15px;
 }
 .restaurantNameDesc {
   width: Calc(100% - 370px);
@@ -49,45 +53,66 @@ header img {
   width: 370px;
   object-fit: cover;
 }
-
+.containerCatBasket {
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+/*************/
+/* CATEGORIE */
+/*************/
 .containerCategories {
-  max-width: 730px;
+  max-width: Calc(100% - 400px);
   display: flex;
   flex-direction: column;
-  background-color: #f4f5f5;
+  padding-top: 30px;
+  padding-left: 15px;
+  padding-right: 10px;
+  background-color: #d8e2e2;
 }
 .categoryTitle {
   font-family: "Fjalla One", sans-serif;
   font-size: 24px;
   font-weight: 600;
-  color: #2e3333;
-  margin-bottom: 20px;
+  color: #434747;
+  margin-bottom: 16px;
 }
-
+/********/
+/* MENU */
+/********/
 .containerMenu {
   width: 100%;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap-reverse;
   justify-content: space-between;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 .cardMenu:hover {
-  /* transform: scale(1.05); */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .cardMenu {
-  /* transition: all 0.4s ease-in-out; */
   font-family: "IBM Plex Sans", sans-serif;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   width: Calc(50% - 10px);
   height: 135px;
+  margin-bottom: 16px;
+  overflow: hidden;
   background-color: white;
-  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+  border-radius: 7px;
 }
 .cardMenu img {
-  width: 205px;
-  height: 305px;
+  width: 96px;
+  height: 96px;
+  padding: 10px;
   object-fit: cover;
+  border-radius: 15px;
+}
+.menuContainerDetail {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding-left: 10px;
 }
 .menuTitle {
   padding-top: 10px;
@@ -106,15 +131,94 @@ header img {
 .menuPrice {
   font-size: 16px;
 }
+/**********/
+/* BASKET */
+/**********/
+.basket {
+  font-family: "IBM Plex Sans", sans-serif;
+  color: #828585;
+  font-size: 16px;
+  width: 370px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0px;
+  z-index: 1;
+}
+.basket-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+.basketQtyMenu {
+  display: flex;
+  flex-direction: row;
+  width: Calc(100% - 80px);
+  margin-right: 5px;
+}
+.basketMenuPrice {
+  width: 70px;
+  text-align: right;
+}
 
-button {
+.minus:before,
+.plus:before {
+  font-family: FontAwesome;
+  display: inline-block;
+  padding-right: 6px;
+  vertical-align: middle;
+  cursor: pointer;
+  color: #33d6c9;
+}
+.minus:before {
+  content: "\f068";
+}
+.plus:before {
+  content: "\f067";
+}
+.plus-minus {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: solid 1px #33d6c9;
+  color: #33d6c9;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.basket-qty {
+  text-align: center;
+  width: 25px;
+}
+.basket-title {
+  width: 100%;
+  padding-left: 10px;
+}
+.plus-minus:hover {
+  border: solid 1px #00a396;
+  color: #00a396;
+}
+.basket button {
   border: none;
-  height: 40px;
-  width: 220px;
-  margin-right: 20px;
+  height: 45px;
+  width: Calc(100% - 20px);
+  margin: 10px;
   padding: 10px;
   outline: none;
-  font-size: 22px;
+  font-size: 16px;
   font-weight: bold;
-  background-color: #f4f4f4;
+  color: white;
+  background-color: #00ccbc;
+}
+.basketTotal {
+  display: flex;
+  justify-content: space-between;
+  color: #2e3333;
+  font-weight: bold;
+  margin-top: 16px;
+  padding: 16px 10px 10px 20px;
+  border-top: 3px solid #f0f0f0;
 }
